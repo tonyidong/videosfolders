@@ -1,0 +1,33 @@
+CREATE TABLE users(
+	id MEDIUMINT auto_increment NOT NULL,
+	username varchar(50) NOT NULL,
+	crypted_password varchar(200) NOT NULL,
+	PRIMARY KEY (id)
+) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
+
+
+CREATE TABLE folders (
+	id MEDIUMINT AUTO_INCREMENT NOT NULL,
+	user_id MEDIUMINT NOT NULL,
+	folder_name varchar(50) NOT NULL,
+	status ENUM('A','D') NOT NULL DEFAULT 'A',
+	last_edit TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,	
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES users (id)
+) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
+
+
+CREATE TABLE video(
+	id MEDIUMINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	folder_id MEDIUMINT NOT NULL,
+	title VARCHAR(50) NOT NULL,
+	link VARCHAR(200),
+	status ENUM('A','D') NOT NULL DEFAULT 'A',
+	last_edit TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,	
+	PRIMARY KEY (id),
+	FOREIGN KEY (folder_id) REFERENCES folders (id)
+) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
+
+
+
+

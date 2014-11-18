@@ -1,0 +1,61 @@
+
+
+
+body { 
+  background: url(img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+div{
+  
+  text-align: center;
+}
+
+h1 {
+  color: yellow;
+  font-weight: bolder;
+}
+
+h2 {
+  color: #006600;
+}
+
+h3 {
+  color: #F2ECDE;
+}
+
+
+#header {
+    position:relative;
+    height: 100px;
+    margin: 5px 5px 0 5px;
+    border: #0f0f12 outset 2px;
+    border-radius: 15px;
+}
+
+.headerBg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+.panel{
+  background-color: rgba(0,0,0,0.6);
+}
+
+.folder-title{
+  font-weight: bold;
+  color: #088A08;
+}
